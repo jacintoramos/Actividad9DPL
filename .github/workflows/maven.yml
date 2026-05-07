@@ -17,7 +17,7 @@ jobs:
     - name: 2. Configurar el entorno de Java
       uses: actions/setup-java@v5 # Actualizado a v5
       with:
-        java-version: '17'
+        java-version: '25'
         distribution: 'temurin'
 
     - name: 3. Ejecutar las pruebas unitarias con Maven Wrapper
