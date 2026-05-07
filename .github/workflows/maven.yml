@@ -1,33 +1,26 @@
 name: Integración Continua Java
 
-# ¿Cuándo se ejecuta esto?
-
 on:
   push:
     branches: [ "**" ]
-# El * es para que se ejecute en todas las ramas
   pull_request:
     branches: [ "main" ]
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # <- Fuerza Node.js 24
-
-# ¿Qué tareas va a realizar?
 jobs:
   build:
-    runs-on: ubuntu-latest # Máquina virtual donde se ejecutará
+    runs-on: ubuntu-latest
 
     steps:
     - name: 1. Descargar el código del repositorio
-      uses: actions/checkout@v5
+      uses: actions/checkout@v5 # Actualizado a v5
 
-    - name: 2. Configurar el entorno de Java 
-      uses: actions/setup-java@v5
+    - name: 2. Configurar el entorno de Java
+      uses: actions/setup-java@v5 # Actualizado a v5
       with:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: 3. Ejecutar las pruebas unitarias con Maven
-      run:
-	chmod +x mvnw 
-	./mvnw test
+    - name: 3. Ejecutar las pruebas unitarias con Maven Wrapper
+      run: |
+        chmod +x mvnw
+        ./mvnw test
