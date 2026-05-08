@@ -29,8 +29,8 @@ public class EstudianteServiceTest {
     public void setUp() {
         estudiante = new Estudiante();
         estudiante.setId(2L);
-        estudiante.setNombre("Bencomo Alonso");
-        estudiante.setEmail("bencomo.alonso@icloud.com");
+        estudiante.setNombre("Benito Cabrera");
+        estudiante.setEmail("benitoca@gmail.com");
         estudiante.setEdad(45);
     }
 
